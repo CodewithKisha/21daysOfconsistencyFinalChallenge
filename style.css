@@ -1,0 +1,387 @@
+/* Challenge
+
+   Make the navigation layout work
+   on both mobile and large screens.
+
+   Mobile-first, so mobile styles first,
+   then add the large screen styles
+   inside the existing media query
+
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&family=Oswald:wght@600;700&display=swap');
+
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-size: 1.3rem;
+}
+
+
+
+header {
+    background: #2E323F;
+    padding: 1em 0;
+    text-align: center;
+    font-family: 'Oswald', sans-serif
+}
+
+.nav {
+    width: 100%;
+}
+
+/*start from here*/
+
+.nav__item, .nav__link{
+    list-style: none;
+    text-decoration: none;
+    color: #fff;
+    text-transform: uppercase;
+    padding: .7em;
+    font-weight: 700;
+    font-size: 1.2rem;
+}
+
+.nav__link--button{
+    color: #fff;
+    display: inline-block;
+    background-color: #A59678;
+    border-radius: 100px;
+    padding: .4em 1em;
+}
+
+.nav__list {
+    margin: 0;
+    padding: 0;
+}
+
+.nav__list--primary {
+    margin-bottom: 1.8em;
+}
+
+
+
+.nav-toggle {
+    cursor: pointer;
+    border: 0;
+    width: 3em;
+    height: 3em;
+    padding: 0em;
+    border-radius: 50%;
+    background: #072A2D;
+    color: white;
+    transition: opacity 250ms ease;
+    
+    position: absolute;
+    left: 0;
+}
+
+.nav-toggle:focus,
+.nav-toggle:hover {
+    opacity: .75;
+}
+
+.hamburger {
+    width: 50%;
+    position: relative;
+}
+
+.hamburger,
+.hamburger::before,
+.hamburger::after {
+    display: block;
+    margin: 0 auto;
+    height: 3px;
+    background: white;
+}
+
+.hamburger::before,
+.hamburger::after {
+    content: '';
+    width: 100%;
+}
+
+.hamburger::before {
+    transform: translateY(-6px);
+}
+
+.hamburger::after {
+    transform: translateY(3px);
+}
+
+/* made changes here from video
+   to make it more accessible.
+   
+   Works the same :) */
+.nav {
+    visibility: hidden;
+    height: 0;
+    position: absolute;
+}
+
+.nav--visible {
+    visibility: visible;
+    height: auto;
+    position: relative;
+} 
+
+
+.logo {
+    height: 30px;
+}
+
+h1 {
+    font-size: 3rem;
+    margin-top: 0;
+    font-family: 'Oswald', sans-serif
+}
+
+.section-title{
+    color: #A59678;
+    font-family: 'Oswald', sans-serif
+}
+
+.btn {
+    display: inline-block;
+    text-decoration: none;
+    text-transform: uppercase; 
+    color: #fff;
+    font-size: .98rem;
+    font-weight: 900;
+    background-color: #A59678;
+    padding: .75em 2.5em;
+    border-radius: 100px;
+    font-family: 'Oswald', sans-serif
+}
+
+.btn:hover,
+.btn:focus {
+    opacity: .75; 
+}
+
+.container {
+    width: 80%;
+    max-width: 1200px;
+    margin: 0 auto;
+    /* added for nav-toggle positioning */
+    position: relative;
+}
+
+
+.hero {
+    padding: 100px 0;
+    background-color: #3B4050;
+    color: #FFF;
+}
+
+.hero--text, .con p, .primary-content p, .shift p {
+    font-family: 'Montserrat', sans-serif;
+}
+
+.hero--text {
+    font-size: 1.1rem;
+}
+
+
+/*second-row starts here*/
+
+.second-row {
+    background-color: #f3f3f3;
+    padding: 2em;
+    margin: 0;
+}
+
+.second-row h2 {
+   color:#A59678;
+   text-align: center;
+   font-family: 'Oswald', sans-serif
+}
+
+.second-row p {
+    color:#3B4050;
+    font-size: 1.1rem;
+    text-align: center;
+    padding: .4em;
+ }
+
+.main {
+    margin-top: 3em;
+    font-size: 1.3rem;
+}
+
+
+.hero__img {
+    width: 100%;   
+}
+
+
+.sidebar {
+    text-align: center;
+    color: #fff;
+    font-size: 1rem;
+}
+
+.sidebar-title {
+    font-family: 'Oswald', sans-serif
+}
+
+.shift {
+    margin-top: 2em;
+    background-color: #2E323F;
+    padding: 1.6em;
+    width: 100%;
+}
+
+.primary-content p {
+   font-size: 1rem;
+}
+
+.shift h2 {
+    font-family: 'Oswald', sans-serif
+}
+
+/*footer starts here*/
+
+footer {
+    background-color: #2E323F;
+    color: #fff;
+    margin-top: 1em;
+    padding: 3em 0;
+}
+
+.foot-head {
+    text-align: center;
+}
+
+
+.spec h3 {
+    color: #A59678;
+    font-family: 'Oswald', sans-serif
+}
+
+.spec p {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.1rem;
+}
+
+.ft-list {
+    list-style: none;
+    font-size: 1.1rem;
+    font-family: 'Montserrat', sans-serif;
+    
+}
+
+.chan {
+    color: #A59678;
+}
+
+@media (min-width: 700px) {
+    .sidebar {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .hero__img {
+        width: 100%;   
+    }
+    .shift{
+        margin-right: 1em;
+        padding: 2em;
+    }
+
+}
+
+@media (min-width: 1000px) {
+
+    
+    .nav-toggle {
+        display: none;
+    }
+
+    .nav {
+        visibility: visible;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        position: relative;
+        height: auto;
+    }
+
+    .nav__list {
+        display: flex;
+        margin: 0;
+    }
+
+    .row {
+        display: flex; 
+        justify-content: space-between;
+    }
+
+    .hero__text h1 {
+        font-size: 5rem;
+        line-height: 1;
+        font-family: 'Oswald', sans-serif
+    }
+
+    .hero__text {
+        width: 50%;
+    }
+    
+    .hero__img {
+        width: 100%;
+        align-self: flex-start;
+        margin: 0;
+    }
+
+    
+    .hero--text {
+        margin: 4.5em 0 0 0;
+        width: 50%;
+        font-size: 1.2rem;
+    }
+
+
+    .con + .con {
+        padding-left: .5em;
+    }
+    
+    .primary-content {
+        width: 62%;
+    }
+
+    .sidebar {
+        width: 32%;
+        display: flex;
+        flex-direction: column;
+    }
+
+     .shift{
+         margin-left: 0;
+     }
+
+    .move{
+        padding-top: 1em;
+    }
+
+    .logo{
+        margin-top: .9em;
+    }
+
+    .wrapper {
+        display: flex;
+        justify-content: space-around;
+    }
+    .spec h3 + .spec h3 + .spec h3{
+        margin-left: 2em;
+    }
+
+
+
+    .ft-list {
+        margin-left: -2em;
+    }
+
+}
